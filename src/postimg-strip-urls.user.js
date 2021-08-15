@@ -10,7 +10,7 @@
 
 ;(() => {
   const elements = Array.from(
-    document.querySelectorAll('input[readonly][type=text][id^=code_]'),
+    document.querySelectorAll('input[readonly][type=text][id^=code_]')
   )
 
   const transforms = {
@@ -25,7 +25,7 @@
     const initial = el.value
     if (spec instanceof RegExp) {
       const result = spec.exec(initial)
-      if (!result[1]) {
+      if (!result?.[1]) {
         return false
       }
       el.value = result[1]
